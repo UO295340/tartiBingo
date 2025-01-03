@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarta de Fresa Bingo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="color: #ff66b2;">🍓 TartiBingo 🍓</h1>
+        
+        <canvas id="ruletaCanvas" width="400" height="400"></canvas>
+        <button id="spinButton">Girar</button>
+        <div id="historial">
+            <h2>Historial</h2>
+            <ul id="seleccionados"></ul>
+        </div>
+
+        <!-- Contenedor del Modal -->
+        <div id="modalSeleccionado" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="seleccionadoNombre"></p>
+                <img id="seleccionadoImagen" src="" alt="Imagen del seleccionado" />
+            </div>
+        </div>
+        
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

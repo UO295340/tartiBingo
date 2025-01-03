@@ -1,0 +1,225 @@
+/* Menú de inicio */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-container {
+    padding: 20px;
+}
+
+.mii-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.mii {
+    width: 150px;
+    transition: transform 0.3s;
+}
+
+.mii-text {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #555;
+}
+
+.talk-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.talk-button:hover {
+    background-color: #e0559f;
+}
+
+.talk-button:active {
+    transform: scale(0.95);
+}
+
+
+
+/* General */
+body {
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    background: #f9e6f1; /* Fondo rosa pastel */
+    margin: 0;
+    padding: 0;
+    color: #3d3d3d; /* Texto oscuro */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Contenedores */
+#tablero, #historial {
+    margin: 20px 0;
+    padding: 10px;
+    background: #ffe6f1; /* Fondo rosa suave */
+    border: 2px solid #ff66b2; /* Bordes en rosa vibrante */
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+#tablero h2, #historial h2 {
+    margin: 0;
+    padding: 10px;
+    background: #ff66b2; /* Rosa intenso */
+    color: white;
+    border-radius: 20px 20px 0 0;
+}
+
+#participantes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center; /* Centrar los elementos */
+}
+
+.participante {
+    background: #fff2f9; /* Fondo claro */
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #3d3d3d; /* Texto oscuro */
+    border: 2px dashed #ff99cc; /* Bordes decorativos */
+    box-shadow: 2px 2px 8px rgba(255, 0, 102, 0.2);
+}
+
+/* Canvas (Ruleta) */
+canvas {
+    background: radial-gradient(circle, #fff5fa 60%, #ffe6f1); /* Fondo degradado */
+    border: 5px solid #ff66b2; /* Borde rosa fuerte */
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 8px 16px rgba(255, 0, 102, 0.5); /* Sombra intensa */
+    max-width: 100%;
+    height: auto; /* Mantener proporción */
+}
+
+/* Botón */
+button {
+    background-color: #ff99cc; /* Rosa brillante */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 0, 102, 0.5);
+}
+
+button:hover {
+    background-color: #ff66b2; /* Rosa más oscuro */
+}
+
+/* Historial de seleccionados */
+#seleccionados {
+    list-style-type: none;
+    padding: 10px;
+}
+
+#seleccionados li {
+    background: #ffccdd; /* Rosa suave */
+    color: #3d3d3d;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 2px 2px 8px rgba(255, 0, 102, 0.2);
+}
+
+#modalSeleccionado {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    text-align: center; /* Centra el contenido del modal */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.modal-content img {
+    display: block;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    max-width: 50%; /* Ajusta el tamaño máximo de la imagen */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+.modal-content p {
+    margin: 20px 0 10px; /* Espaciado alrededor del texto */
+    font-size: 1.5em; /* Tamaño de texto más grande */
+    color: #333; /* Color de texto */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media Queries para Responsiveness */
+@media (max-width: 768px) {
+    #tablero, #historial {
+        width: 95%; /* Más ancho en dispositivos pequeños */
+    }
+
+    button {
+        font-size: 14px; /* Reducir tamaño del texto en el botón */
+        padding: 8px 16px; /* Reducir tamaño del botón */
+    }
+
+    canvas {
+        max-width: 90%; /* Reducir un poco el tamaño en móviles */
+    }
+
+    .participante {
+        font-size: 12px; /* Reducir texto en participantes */
+        padding: 8px; /* Reducir tamaño */
+    }
+}
+

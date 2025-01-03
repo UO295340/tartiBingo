@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos a TartiBingo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="menu-container">
+        <h1 style="color: #ff66b2; font-size: 40px;">🍓 ¡Bienvenida a TartiBingo! 🍓</h1>
+
+        <!-- Imagen del Mii -->
+        <div class="mii-container">
+            <img src="mii_idle.png" alt="Mii en reposo" id="miiImage" class="mii">
+            <p id="miiText" class="mii-text">¡Haz que el Mii hable presionando el botón!</p>
+            <button id="talkButton" class="talk-button">Hablar</button>
+            <audio id="miiAudio" src="mii_audio.mp3"></audio>
+
+        </div>
+
+        <button id="startButton">Comenzar Juego</button>
+    </div>
+
+    <script>
+        const talkButton = document.getElementById('talkButton');
+        const miiImage = document.getElementById('miiImage');
+        const miiText = document.getElementById('miiText');
+        const miiAudio = new Audio('mii_audio.mp3'); // Reemplaza con la ruta de tu archivo de audio
+    
+        // Diálogo del Mii (frases del Mii)
+        const dialogo = [
+            "",
+            "¡Hola Ea! Soy tú… pero en versión Mii.",
+            "Sí, así es, he venido a la vida digital para hacerte una pequeña presentación muy especial.",
+            "Espero que estés lista, porque esto no es cualquier cosa… ¡es un TartiBingo!",
+            "Así que Ea, prepárate para girar, reír, disfrutar y sentir toda la emoción de este juego.",
+            "¡Adelante pulsa el botón para Comenzar el juego! "
+        ];
+    
+        talkButton.addEventListener('click', () => {
+            // Reproducir el audio
+            miiAudio.currentTime = 0;
+            miiAudio.play();
+    
+            // Inicializar el tiempo y alternar las imágenes y frases
+            let tiempoTranscurrido = 0;
+            let hablando = false;
+            let fraseIndex = 0;
+    
+            // Cambiar la frase inicial
+            miiText.textContent = dialogo[fraseIndex];
+    
+            const intervalo = setInterval(() => {
+                // Alternar entre las imágenes de hablar y reposo cada 2 segundos
+                if (tiempoTranscurrido % 0.25 === 0) {
+                    hablando = !hablando;
+                    miiImage.src = hablando ? "mii_talking.png" : "mii_idle.png";
+                }
+    
+                // Cambiar la frase cada 5 segundos
+                if (tiempoTranscurrido % 5 === 0) {
+                    fraseIndex = (fraseIndex + 1) % dialogo.length; // Avanzar al siguiente índice de frase
+                    miiText.textContent = dialogo[fraseIndex];
+                }
+    
+                // Incrementar el tiempo transcurrido
+                tiempoTranscurrido += 0.5;
+    
+                // Detener el intervalo después de 10 segundos
+                if (tiempoTranscurrido >= 21) {
+                    clearInterval(intervalo);
+                    miiImage.src = "mii_idle.png"; // Volver a la imagen en reposo
+                }
+            }, 500); // Cambiar la imagen cada 0.5 segundos (2 segundos entre alternancia)
+        });
+    </script>
+
+
+
+    <script>
+        // Redirige al archivo principal del juego al hacer clic en el botón
+        document.getElementById('startButton').addEventListener('click', () => {
+            window.location.href = 'index.html'; // Cambia a la ruta de tu archivo de juego
+        });
+    </script>
+
+
+</body>
+
+</html>
