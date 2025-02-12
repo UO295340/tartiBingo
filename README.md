@@ -15,7 +15,7 @@
 ## 🛠️ Instalación y Uso
 1. Clona este repositorio
 ```sh
-git clone https://github.com/tuusuario/tartibingo.git;
+git clone https://github.com/NataliaBlancoAgudin/TartiBingo.git
 ```
 2. Abre el archivo index.html en tu navegador
 3. ¡Disfruta del juego! 🍓🎲
